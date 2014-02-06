@@ -29,4 +29,15 @@ students.find('1') //should find Fred
 .students.add({name: 'Jim', id:3})
 
 //a Collection has a .remove() method that takes an id and removes it from models array
-.students.removes('2')
+.students.remove('2')
+
+
+Bonus lecture:
+
+
+
+
+
+
+
+

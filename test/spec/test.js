@@ -68,11 +68,7 @@
         });
 
         //Attempt at my own it statements:
-        // it('should not accept an empty string as an argument.', function(){
-        //   expect(students.find('').to.equal(undefined)); //Revisit. Does this really test what i'm lookig for?
-        // });
-
-      
+        //it('should not accept an empty string as an argument.',)
       });
  
       describe("has an .add() method",function(){
@@ -102,7 +98,9 @@
           var students = new Collection({name: 'Fred', id: '1'},{name:'Jack', id: '2'});
           expect(function(){students.add({name: 'Fred'})}).to.throw(Error) ; 
         });
+      
       });
+      
  
       describe("has a .remove() method",function(){
         it("should, when given an id, remove the corresponding object from the models property", function(){

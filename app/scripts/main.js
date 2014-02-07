@@ -4,9 +4,10 @@ function Collection (models) {
   this.models = models;
   this.find = function(id){
     var result;
-    if(typeof(id)  != 'string') {
-      throw new Error ('Oops!');
+    if((!(_.isString(id))) || (arguments.length != 1)) {
+      throw new Error ('Need a valid id');
     }
+
     this.models.forEach(function(value, index){
       if(value.id == id){
         result = value;
@@ -47,6 +48,29 @@ function Collection (models) {
 
     return true;
   };
+
+  this.empty = function() {
+    if(arguments.length != 0) {
+      throw new Error('.empty() does not need an argument.');
+    }
+    for(var i = 0; i<models.length; i++) {
+      this.models = _.without(this.models, models[i]);
+    }
+    return true;
+  };
+
+  this.random = function() {
+    var rndm = _.sample(this.models)
+    return rndm;
+  };
+
+  this.length = function() {
+    if(arguments.length != 0) {
+      throw new Error('.empty() does not need an argument.');
+    }
+    var modelLength = this.models.length;
+    return modelLength;
+  }
 };
 
 
